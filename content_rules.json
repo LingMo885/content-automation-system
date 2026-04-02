@@ -1,0 +1,276 @@
+{
+  "system": {
+    "name": "八字内容自动化生成系统规则库",
+    "version": "1.0.0",
+    "description": "八字内容生成的规则和模板配置",
+    "last_updated": "2024-03-26"
+  },
+  
+  "bazi_analysis_rules": {
+    "required_elements": ["年柱", "月柱", "日柱", "时柱", "日主五行", "十神分析", "五行强弱"],
+    "recommended_elements": ["大运分析", "流年运势", "性格特点", "事业方向", "财运分析", "健康提示", "婚姻感情"],
+    "analysis_depth_levels": {
+      "simple": {
+        "description": "简单分析",
+        "elements": ["八字排盘", "日主五行", "基本性格", "简单建议"],
+        "target_length": 300
+      },
+      "standard": {
+        "description": "标准分析",
+        "elements": ["八字排盘", "日主五行", "十神分析", "五行强弱", "性格特点", "事业方向", "综合建议"],
+        "target_length": 800
+      },
+      "detailed": {
+        "description": "详细分析",
+        "elements": ["八字排盘", "日主五行", "十神分析", "五行强弱", "大运分析", "性格特点", "事业方向", "财运分析", "健康提示", "婚姻感情", "综合建议"],
+        "target_length": 1500
+      }
+    }
+  },
+  
+  "content_generation_rules": {
+    "tone_and_style": {
+      "professional": {
+        "description": "专业风格",
+        "characteristics": ["术语准确", "逻辑严谨", "分析深入", "引用经典"],
+        "suitable_for": ["知乎", "专业博客", "学术文章"]
+      },
+      "friendly": {
+        "description": "友好风格",
+        "characteristics": ["语言亲切", "举例生动", "建议实用", "鼓励为主"],
+        "suitable_for": ["小红书", "微信公众号", "微博"]
+      },
+      "concise": {
+        "description": "简洁风格",
+        "characteristics": ["语言精炼", "重点突出", "直接建议", "易于理解"],
+        "suitable_for": ["抖音", "快手", "短文案"]
+      }
+    },
+    
+    "quality_standards": {
+      "minimum_requirements": {
+        "accuracy": "命理术语使用准确",
+        "clarity": "表达清晰，无歧义",
+        "relevance": "内容与八字主题相关",
+        "helpfulness": "提供有价值的建议"
+      },
+      "excellence_criteria": {
+        "depth": "分析深入，见解独到",
+        "structure": "结构清晰，逻辑严密",
+        "engagement": "内容吸引人，引发共鸣",
+        "actionability": "建议具体可行"
+      }
+    },
+    
+    "avoidance_rules": {
+      "absolute_statements": ["一定", "绝对", "肯定", "必须", "绝不会"],
+      "superstition": ["迷信内容", "无科学依据的断言", "恐吓性语言"],
+      "privacy_violation": ["泄露个人信息", "具体身份识别"],
+      "platform_violation": ["违反平台规则的内容", "敏感话题"]
+    }
+  },
+  
+  "platform_specific_rules": {
+    "wechat": {
+      "content_format": "图文消息",
+      "recommended_length": "800-2000字",
+      "structure": ["吸引人的标题", "摘要/引言", "主体分析", "总结建议", "互动引导"],
+      "special_features": ["支持多媒体", "可添加小程序", "公众号菜单"],
+      "best_practices": ["使用公众号特色格式", "添加关注引导", "设置话题标签"]
+    },
+    
+    "xiaohongshu": {
+      "content_format": "图文笔记",
+      "recommended_length": "300-800字",
+      "structure": ["吸引眼球的标题", "简洁的引言", "要点列表", "实用建议", "话题标签"],
+      "special_features": ["大量使用emoji", "图片质量要求高", "社区互动重要"],
+      "best_practices": ["使用小红书特色标签", "添加位置信息", "参与话题挑战"]
+    },
+    
+    "douyin": {
+      "content_format": "短视频文案",
+      "recommended_length": "50-300字",
+      "structure": ["吸引人的开头", "核心信息",行动号召", "话题标签"],
+      "special_features": ["配合短视频", "音乐和特效", "评论区互动"],
+      "best_practices": ["使用热门音乐", "参与话题挑战", "及时回复评论"]
+    },
+    
+    "zhihu": {
+      "content_format": "问答/文章",
+      "recommended_length": "1000-5000字",
+      "structure": ["问题概述", "专业分析", "数据支持", "结论建议", "参考文献"],
+      "special_features": ["支持Markdown", "专业认证", "专栏文章"],
+      "best_practices": ["引用权威来源", "使用专业术语", "参与相关话题"]
+    },
+    
+    "weibo": {
+      "content_format": "微博帖子",
+      "recommended_length": "100-500字",
+      "structure": ["简洁的陈述", "关键信息", "互动提问", "话题标签"],
+      "special_features": ["话题热搜", "@提及", "投票功能"],
+      "best_practices": ["使用热门话题", "@相关账号", "添加图片/视频"]
+    }
+  },
+  
+  "publishing_strategy_rules": {
+    "timing_strategy": {
+      "best_times": {
+        "weekday_morning": "07:00-09:00",
+        "weekday_noon": "12:00-13:00",
+        "weekday_evening": "18:00-20:00",
+        "weekday_night": "21:00-23:00",
+        "weekend_morning": "09:00-11:00",
+        "weekend_afternoon": "14:00-16:00",
+        "weekend_evening": "19:00-22:00"
+      },
+      "frequency_limits": {
+        "wechat": "1-3次/天",
+        "xiaohongshu": "1-5次/天",
+        "douyin": "3-10次/天",
+        "zhihu": "1-3次/天",
+        "weibo": "5-15次/天"
+      }
+    },
+    
+    "content_distribution": {
+      "primary_platform": "根据内容类型选择",
+      "cross_posting": {
+        "enabled": true,
+        "time_interval": "1-3小时",
+        "content_adaptation": "必须根据平台特点调整"
+      },
+      "platform_combination": {
+        "detailed_analysis": ["zhihu", "wechat"],
+        "quick_tips": ["douyin", "xiaohongshu", "weibo"],
+        "case_study": ["wechat", "zhihu", "xiaohongshu"],
+        "trending_topic": ["weibo", "douyin", "xiaohongshu"]
+      }
+    }
+  },
+  
+  "quality_evaluation_rules": {
+    "evaluation_dimensions": {
+      "relevance": {
+        "weight": 0.25,
+        "criteria": ["主题相关", "关键词覆盖", "内容聚焦"],
+        "scoring_rules": {
+          "excellent": "完全相关，深度聚焦",
+          "good": "基本相关，稍有偏离",
+          "fair": "部分相关，需要调整",
+          "poor": "偏离主题，需要重写"
+        }
+      },
+      "professionalism": {
+        "weight": 0.25,
+        "criteria": ["术语准确", "逻辑严谨", "分析深度"],
+        "scoring_rules": {
+          "excellent": "专业准确，深度分析",
+          "good": "基本准确，分析合理",
+          "fair": "有错误，需要修正",
+          "poor": "严重错误，需要重写"
+        }
+      },
+      "readability": {
+        "weight": 0.20,
+        "criteria": ["语言流畅", "结构清晰", "易于理解"],
+        "scoring_rules": {
+          "excellent": "非常流畅，结构清晰",
+          "good": "基本流畅，结构合理",
+          "fair": "有些拗口，需要优化",
+          "poor": "难以理解，需要重写"
+        }
+      },
+      "attractiveness": {
+        "weight": 0.20,
+        "criteria": ["标题吸引", "内容有趣", "互动性强"],
+        "scoring_rules": {
+          "excellent": "非常吸引，互动性强",
+          "good": "比较吸引，有一定互动",
+          "fair": "平淡无奇，需要优化",
+          "poor": "毫无吸引力，需要重写"
+        }
+      },
+      "compliance": {
+        "weight": 0.10,
+        "criteria": ["平台合规", "内容安全", "无违规"],
+        "scoring_rules": {
+          "excellent": "完全合规，非常安全",
+          "good": "基本合规，需要注意",
+          "fair": "有违规风险，需要修改",
+          "poor": "严重违规，不能发布"
+        }
+      }
+    },
+    
+    "quality_thresholds": {
+      "excellent": 90,
+      "good": 80,
+      "fair": 70,
+      "pass": 60,
+      "fail": 60
+    },
+    
+    "auto_correction_rules": {
+      "enable_auto_correction": true,
+      "correction_levels": {
+        "minor": "自动修正语法错误",
+        "moderate": "建议内容优化",
+        "major": "需要人工审核"
+      },
+      "correction_triggers": {
+        "grammar_errors": 3,
+        "readability_score": 60,
+        "compliance_issues": 1
+      }
+    }
+  },
+  
+  "ai_enhancement_rules": {
+    "enhancement_types": {
+      "polish": {
+        "description": "语言润色",
+        "purpose": "提升语言流畅度和表达效果",
+        "applicable_to": ["所有内容"],
+        "max_iterations": 2
+      },
+      "expand": {
+        "description": "内容扩展",
+        "purpose": "添加更多细节和解释",
+        "applicable_to": ["内容过短", "需要更多细节"],
+        "expansion_ratio": "1.2-1.5倍"
+      },
+      "simplify": {
+        "description": "内容简化",
+        "purpose": "使内容更简洁易懂",
+        "applicable_to": ["内容过长", "过于复杂"],
+        "simplification_ratio": "0.7-0.8倍"
+      },
+      "professionalize": {
+        "description": "专业化",
+        "purpose": "提升内容专业性",
+        "applicable_to": ["专业平台", "需要提升专业性"],
+        "terminology_level": "增加专业术语"
+      }
+    },
+    
+    "ai_api_selection": {
+      "primary_api": "wenxin",
+      "fallback_apis": ["tongyi", "zhipu"],
+      "selection_criteria": ["可用性", "响应速度", "生成质量", "成本"]
+    },
+    
+    "enhancement_limits": {
+      "max_tokens_per_request": 2000,
+      "max_requests_per_hour": 100,
+      "cost_threshold_per_content": 0.1
+    }
+  },
+  
+  "update_and_maintenance": {
+    "update_frequency": "每月一次",
+    "version_control": true,
+    "backup_before_update": true,
+    "change_log_required": true,
+    "compatibility_check": true
+  }
+}

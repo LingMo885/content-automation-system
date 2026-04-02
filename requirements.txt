@@ -1,0 +1,54 @@
+# 八字内容自动化生成系统依赖包
+
+# 核心依赖
+python>=3.8
+
+# Web框架和HTTP客户端
+requests>=2.31.0
+flask>=3.0.0  # 可选，用于Web界面
+
+# 模板引擎
+Jinja2>=3.1.2
+
+# 数据处理
+pandas>=2.0.0  # 可选，用于数据分析
+numpy>=1.24.0  # 可选，用于数值计算
+
+# 日期时间处理
+python-dateutil>=2.8.2
+
+# 配置管理
+pyyaml>=6.0  # 可选，用于YAML配置
+
+# 日志管理
+structlog>=23.1.0  # 可选，结构化日志
+
+# 测试框架
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# 代码质量
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.5.0
+
+# 文档生成
+sphinx>=7.0.0  # 可选
+mkdocs>=1.5.0  # 可选
+
+# 其他工具
+tqdm>=4.65.0  # 进度条
+colorama>=0.4.6  # 终端颜色
+
+# 八字计算相关（如果有的话）
+# pybazi>=1.0.0  # 如果有八字计算库
+
+# AI API SDK（根据实际使用的API）
+# qianfan>=1.0.0  # 百度文心
+# dashscope>=1.14.0  # 阿里通义
+# zhipuai>=2.0.0  # 智谱AI
+
+# 开发依赖（可选）
+pre-commit>=3.5.0
+ipython>=8.15.0
+jupyter>=1.0.0

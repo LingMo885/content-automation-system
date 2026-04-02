@@ -1,0 +1,365 @@
+{
+  "_comment": "微信公众号内容规则库 - v1.0.0",
+  "_description": "针对微信公众号平台的八字/命理内容创作规范，包括标题、正文、配图、标签等全方位指导",
+  "_created": "2026-03-27",
+  "_last_updated": "2026-03-27",
+
+  "platform": "wechat",
+  "platform_name": "微信公众号",
+
+  "title_rules": {
+    "length": {
+      "min_chars": 10,
+      "max_chars": 30,
+      "optimal_chars": 15,
+      "note": "微信订阅号标题过长会被截断，建议控制在15-20字"
+    },
+    "structure_patterns": {
+      "daily_horoscope": "【{日期}{日柱}日】{核心关键词}运势，...",
+      "knowledge": "{核心概念}是什么？{数字}分钟搞懂...",
+      "analysis": "{人群/特征}的八字都有这个特点，...",
+      "monthly_horoscope": "【{月份}运势全集】{重点生肖}要特别注意...",
+      "interaction": "{你是哪种}？{测完/看完}你就明白了"
+    },
+    "avoid_words": {
+      "prohibited": [
+        "一定", "绝对", "必须", "保证", "肯定", "百分百",
+        "最准", "天下第一", "第一", "唯一", "神准",
+        "算命", "迷信", "骗人",
+        "破财", "死亡", "离婚", "灾难", "倒霉"（改用"注意"）
+      ],
+      "use_instead": {
+        "一定": "往往",
+        "绝对": "通常",
+        "一定倒霉": "需要多注意",
+        "破财": "理财需要谨慎",
+        "离婚": "感情需要经营"
+      }
+    },
+    "emoji_usage": {
+      "allowed": true,
+      "max_emoji_count": 2,
+      "recommended_positions": ["标题开头或结尾", "关键转折处"],
+      "allowed_emoji": ["📅", "🌟", "💰", "❤️", "🏥", "🎯", "📈", "🔥", "✨", "🌈", "🙏", "👇", "💪", "🎉", "🔮"],
+      "forbidden_context": "标题中不要用哭丧类emoji（如😭💀）"
+    },
+    "number_rules": {
+      "prefer_numbers": true,
+      "reasons": [
+        "数字能提高打开率（数据表明）",
+        "具体数字更有可信度",
+        "如：3分钟、5个方法、2026年"
+      ]
+    }
+  },
+
+  "body_rules": {
+    "length": {
+      "min_chars": 600,
+      "max_chars": 3000,
+      "optimal_chars": 1200,
+      "by_type": {
+        "daily_horoscope": [600, 1200],
+        "knowledge": [1200, 2000],
+        "analysis": [2000, 3000],
+        "monthly_horoscope": [2000, 3500],
+        "interaction": [400, 800]
+      }
+    },
+    "paragraph_rules": {
+      "max_chars_per_paragraph": 150,
+      "min_paragraphs": 4,
+      "recommended_empty_lines": 1,
+      "bullet_points": {
+        "allowed": true,
+        "max_items": 7,
+        "style": "emoji开头，如 💰 财运：..."
+      }
+    },
+    "emoji_rules": {
+      "ratio": "1个emoji / 100字",
+      "max_per_article": 15,
+      "placement": [
+        "每个维度运势开头（🌟💰❤️🏥）",
+        "重点提示加粗后",
+        "分隔用【】> emoji"
+      ],
+      "context_rules": {
+        "allowed_contexts": ["运势维度开头", "重点强调", "金句", "收尾互动"],
+        "forbidden_contexts": ["大段文字中间", "每句话都加"]
+      }
+    },
+    "formatting_rules": {
+      "bold": {
+        "usage": "重点词汇、结论、核心观点",
+        "max_per_article": 8,
+        "pattern": "**文字**"
+      },
+      "quote": {
+        "usage": "核心定义、引用、结论框",
+        "pattern": "> 引用内容",
+        "max_per_article": 5
+      },
+      "headers": {
+        "usage": "文章大章节",
+        "style": "## 章节名",
+        "max_h2_per_article": 5
+      }
+    },
+    "voice_and_tone": {
+      "primary_style": "温暖、实用、专业",
+      "pronouns": "用"你"而不是"他/她"，更有亲近感",
+      "sentence_patterns": {
+        "good": [
+          "今天的运势...",
+          "你要注意的是...",
+          "本月适合...",
+          "这类人的特点是..."
+        ],
+        "avoid": [
+          "你一定会...",
+          "这是命中注定的...",
+          "无法改变的...",
+          "太迷信的表述"
+        ]
+      }
+    },
+    "structure_template": {
+      "daily_horoscope": {
+        "sections": [
+          "开篇hook（30字以内）",
+          "今日整体运势概述（150字）",
+          "事业/学业运势（100-150字）",
+          "财运运势（100-150字）",
+          "感情/人际运势（100-150字）",
+          "健康运势（50-100字）",
+          "今日开运提示（100字以内）",
+          "互动引导（50字以内）"
+        ]
+      },
+      "knowledge": {
+        "sections": [
+          "开篇引入（150字）",
+          "核心概念讲解（600-1000字）",
+          "实例解析（300-500字）",
+          "总结提炼（100字）"
+        ]
+      },
+      "analysis": {
+        "sections": [
+          "开篇引入（200字）",
+          "特征识别（300-400字）",
+          "原理分析（300-400字）",
+          "类型细分（300-400字）",
+          "真实案例（200-300字）",
+          "应对策略（400-600字）",
+          "总结升华（100字）"
+        ]
+      }
+    },
+    "closing_rules": {
+      "cta_patterns": [
+        "今天的分析对你有帮助吗？",
+        "你是哪种情况？评论区告诉我~",
+        "有帮助的话，转发给需要的朋友吧 🙏"
+      ],
+      "footer_required": true,
+      "footer_content": "——\n🏷️ 标签1 #标签1 #标签2 #标签3"
+    }
+  },
+
+  "image_rules": {
+    "cover_image": {
+      "size": "900 x 383 像素（2.35:1）",
+      "format": "JPG/PNG",
+      "style": "符合节气/主题，颜色与内容调性一致",
+      "text_overlay": "可加标题文字，但不遮挡主体"
+    },
+    "content_images": {
+      "max_images": 3,
+      "positions": ["开篇后", "核心分析后", "结尾前"],
+      "style": "简洁、与内容相关",
+      "format": "JPG/PNG",
+      "size_recommendation": "宽度600-900像素"
+    },
+    "interactive_images": {
+      "usage": "测试类内容可多图",
+      "max_images": 5
+    },
+    "prohibited_images": {
+      "types": [
+        "过于阴暗恐怖",
+        "血淋淋",
+        "迷信色彩过重（符咒类）",
+        "带政治隐喻",
+        "带其他品牌水印"
+      ]
+    },
+    "recommended_image_themes": {
+      "daily": ["日出/日落", "自然风光", "简洁背景+文字"],
+      "knowledge": ["五行图", "八卦图", "传统文化元素"],
+      "analysis": ["命理示意图", "流程图", "对比图"],
+      "monthly": ["节气意象", "月度日历感设计"]
+    }
+  },
+
+  "tag_rules": {
+    "core_tags": {
+      "required": true,
+      "count": [3, 5],
+      "always_include": ["#每日运势", "#八字看命", "#命理解读"],
+      "fallback_tags": ["#命理", "#八字", "#传统文化"]
+    },
+    "optional_tags": {
+      "by_content_type": {
+        "daily_horoscope": ["#事业运势", "#财运", "#感情", "#健康", "#创业", "#职场"],
+        "knowledge": ["#八字入门", "#五行", "#十神", "#命理科普", "#传统文化", "#自我认知"],
+        "analysis": ["#命理分析", "#深度解读", "#命理智慧", "#创业", "#职场", "#人生选择"],
+        "monthly_horoscope": ["#月度运势", "#生肖运势", "#节气运势", "#{月份}运势", "#属{生肖}"],
+        "interaction": ["#互动话题", "#测试", "#命理测试", "#评论区见"]
+      },
+      "by_audience": {
+        "创业者": ["#创业", "#事业", "#财运", "#人生选择"],
+        "职场人": ["#职场", "#事业", "#人际关系", "#自我提升"],
+        "命理爱好者": ["#命理研究", "#八字入门", "#传统文化"]
+      }
+    },
+    "tag_format": {
+      "separator": "空格",
+      "example": "#每日运势 #八字看命 #财运 #创业",
+      "max_tags": 8,
+      "placement": "文末，---分隔线之后"
+    },
+    "hot_tags": {
+      "description": "当前热门/长期热门标签",
+      "list": [
+        "#每日运势",
+        "#八字看命",
+        "#命理",
+        "#传统文化",
+        "#创业",
+        "#职场",
+        "#自我认知",
+        "#财运",
+        "#感情",
+        "#健康"
+      ]
+    }
+  },
+
+  "publishing_rules": {
+    "frequency": {
+      "min_per_week": 3,
+      "max_per_week": 5,
+      "recommended": 4,
+      "monthly_target": 16
+    },
+    "best_times": {
+      "monday": ["07:00", "18:00"],
+      "tuesday": ["12:00"],
+      "wednesday": ["18:00"],
+      "thursday": ["12:00"],
+      "friday": ["18:00"],
+      "saturday": ["10:00"],
+      "sunday": ["14:00"]
+    },
+    "content_schedule": {
+      "daily_horoscope": ["周一", "周四或周五"],
+      "knowledge": ["周二或周六"],
+      "analysis": ["周四"],
+      "interaction": ["周三或周日"],
+      "hot_topic": ["周六或周天", "节假日"],
+      "monthly_horoscope": ["每月1日"]
+    },
+    "draft_review": {
+      "auto_save": true,
+      "review_required": true,
+      "min_review_items": [
+        "标题是否有绝对化用词",
+        "内容是否恐吓/迷信",
+        "字数是否达标",
+        "标签是否完整",
+        "配图是否合适"
+      ]
+    }
+  },
+
+  "compliance_rules": {
+    "prohibited_content": {
+      "superstition": [
+        "宣传封建迷信",
+        "声称能改变命运收取高额费用",
+        "利用命理进行诈骗",
+        "声称能通灵、改命"
+      ],
+      "absolute_statements": [
+        "你一定会...",
+        "命中注定...",
+        "无法改变...",
+        "神仙也算准..."
+      ],
+      "harmful_content": [
+        "恐吓性内容（你一定要出事）",
+        "破坏性建议",
+        "煽动性言论"
+      ]
+    },
+    "required_disclaimers": {
+      "position": "文章底部",
+      "content": "——\n❤️ 温馨提示：命理分析仅供参考，人生道路还需自己努力把握。愿你把握当下，创造美好！",
+      "style": "简短、温暖、不啰嗦"
+    },
+    "privacy_rules": {
+      "case_study": "必须脱敏处理",
+      "personal_info": "不暴露真实姓名、具体职业、详细地址",
+      "birth_info": "只显示月日，不显示年份"
+    },
+    "copyright_rules": {
+      "quote": "引用他人内容需注明来源",
+      "own_content": "原创内容需标注"
+    }
+  },
+
+  "quality_checklist": {
+    "before_publish": [
+      "☐ 标题字数10-30字，无绝对化用词",
+      "☐ 正文长度符合类型要求（600-3000字）",
+      "☐ 每段不超过150字，重点加粗",
+      "☐ Emoji使用合理（最多15个）",
+      "☐ 核心标签3-5个，必带标签完整",
+      "☐ 配图数量1-3张，风格统一",
+      "☐ 无恐吓、绝对化表述",
+      "☐ 底部有免责声明",
+      "☐ 互动引导语已添加",
+      "☐ 内容与定位一致（温暖、专业、实用）"
+    ],
+    "after_publish": [
+      "☐ 确认发布成功",
+      "☐ 检查封面图是否显示正确",
+      "☐ 检查标题是否被截断",
+      "☐ 分享到粉丝群/朋友圈",
+      "☐ 记录发布时间到内容日历"
+    ]
+  },
+
+  "platform_specific_notes": {
+    "subscription_account": {
+      "push_limit": "每天只能推送1次",
+      "algorithm": "打开率很重要，前48小时阅读量决定推荐量",
+      "follow_cta": "每篇文章要有引导关注的动作"
+    },
+    "algorithm_tips": {
+      "title_importance": "标题占算法权重30%+",
+      "interaction_signal": "评论、点赞、转发影响推荐",
+      "retention_rate": "完读率影响推荐权重",
+      "timing": "发布时间影响初始曝光量"
+    }
+  },
+
+  "version_info": {
+    "version": "1.0.0",
+    "created": "2026-03-27",
+    "author": "内容自动化系统",
+    "next_review": "2026-06-27"
+  }
+}

@@ -1,0 +1,100 @@
+# 凌墨公众号自动发布系统 - Crontab配置
+
+## 配置方法
+
+### 方法1：直接编辑crontab
+```bash
+crontab -e
+```
+
+添加以下行：
+```
+# 凌墨公众号每天09:00自动发布
+0 9 * * * /Users/yyf/.openclaw/workspace/content_automation_system/run_daily_publish.sh
+```
+
+### 方法2：使用脚本配置
+```bash
+# 备份现有crontab
+crontab -l > /tmp/crontab_backup_$(date +%Y%m%d_%H%M%S)
+
+# 添加新任务
+(crontab -l 2>/dev/null; echo "0 9 * * * /Users/yyf/.openclaw/workspace/content_automation_system/run_daily_publish.sh") | crontab -
+
+# 验证配置
+crontab -l | grep "凌墨"
+```
+
+### 方法3：使用OpenClaw cron（如果可用）
+```bash
+# 创建OpenClaw cron任务
+openclaw cron create \
+  --name "凌墨公众号发布" \
+  --schedule "0 9 * * *" \
+  --command "cd /Users/yyf/.openclaw/workspace/content_automation_system && python3 wechat_auto_publish.py" \
+  --timezone "Asia/Shanghai"
+```
+
+## 定时任务说明
+
+### 执行时间
+- **每天 09:00**（北京时间）
+- 可以根据需要调整时间
+
+### 执行内容
+1. 读取飞书Bitable中的今日内容规划
+2. 使用AI技能生成文章和配图
+3. 发布到微信公众号草稿箱
+4. 生成执行报告和日志
+
+### 日志查看
+```bash
+# 查看今日日志
+tail -f /Users/yyf/.openclaw/workspace/content_automation_system/logs/wechat_publish_$(date +%Y%m%d).log
+
+# 查看所有日志
+ls -la /Users/yyf/.openclaw/workspace/content_automation_system/logs/
+```
+
+## 测试定时任务
+
+### 立即测试
+```bash
+# 手动执行一次
+/Users/yyf/.openclaw/workspace/content_automation_system/run_daily_publish.sh
+
+# 或直接运行Python脚本
+cd /Users/yyf/.openclaw/workspace/content_automation_system
+python3 wechat_auto_publish.py
+```
+
+### 测试crontab语法
+```bash
+# 测试下一分钟执行
+echo "* * * * * /Users/yyf/.openclaw/workspace/content_automation_system/run_daily_publish.sh" | crontab -
+# 等待1分钟后检查日志
+```
+
+## 监控和维护
+
+### 检查任务状态
+```bash
+# 查看crontab日志
+grep CRON /var/log/syslog | tail -20
+
+# 检查进程
+ps aux | grep wechat_auto_publish
+```
+
+### 错误处理
+如果任务失败，检查：
+1. 脚本执行权限：`chmod +x run_daily_publish.sh`
+2. Python环境：确保Python3可用
+3. 依赖包：如有需要，安装requests等包
+4. 文件权限：确保有写入output目录的权限
+
+## 注意事项
+1. 确保系统时间正确（Asia/Shanghai时区）
+2. 定期清理日志文件，避免磁盘空间不足
+3. 定期检查微信公众号token是否有效
+4. 监控飞书Bitable的连接状态

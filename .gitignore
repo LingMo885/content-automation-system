@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.env
+*.log
+drafts/
+output/
+logs/
+*.md
+
+wechat_token.json
+config.json
+*.json.secret
+secrets/
+
